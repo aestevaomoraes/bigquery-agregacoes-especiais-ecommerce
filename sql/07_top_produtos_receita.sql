@@ -5,33 +5,32 @@
 -- TECNOLOGIA: BigQuery (GoogleSQL)
 -- =========================================================
 
--- 🎯 PROBLEMA DE NEGÓCIO
--- Identificar os produtos
--- que geraram maior receita.
+WITH receita_produtos AS (
 
--- 💡 SOLUÇÃO
--- Utilizar ARRAY_AGG()
--- ordenado pela receita total.
+    SELECT
 
--- 📊 MÉTRICA PRINCIPAL
--- Receita por produto.
+        p.name,
 
--- 🔍 INSIGHT ESPERADO
--- Identificar produtos estratégicos
--- para campanhas, estoque e expansão.
+        SUM(oi.sale_price) AS receita
+
+    FROM `bigquery-public-data.thelook_ecommerce.order_items` oi
+
+    JOIN `bigquery-public-data.thelook_ecommerce.products` p
+        ON oi.product_id = p.id
+
+    GROUP BY p.name
+
+)
 
 SELECT
 
     ARRAY_AGG(
         STRUCT(
-            p.name,
-            SUM(oi.sale_price) AS receita
+            name,
+            receita
         )
         ORDER BY receita DESC
         LIMIT 10
     ) AS top_produtos
 
-FROM `bigquery-public-data.thelook_ecommerce.order_items` oi
-
-JOIN `bigquery-public-data.thelook_ecommerce.products` p
-    ON oi.product_id = p.id;
+FROM receita_produtos;
