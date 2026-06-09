@@ -6,7 +6,7 @@
 ![SQL](https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 
-Projeto desenvolvido para explorar funções avançadas de agregação do BigQuery utilizando a base pública TheLook E-commerce.
+Projeto desenvolvido para aplicar funções avançadas de agregação do BigQuery em problemas reais de negócio utilizando o dataset público TheLook E-commerce.
 
 ---
 
@@ -137,6 +137,7 @@ Principais produtos:
 1. Nike Women's Pro Compression Sports Bra
 2. The North Face Apex Bionic
 3. The North Face Denali Down
+
 ---
 
 # Principais Insights
@@ -147,7 +148,7 @@ Principais produtos:
 |------------|----------:|
 | Jeans | 11.512 |
 | Intimates | 11.317 |
-| Tops & Tees | 10.976 |
+| Fashion Hoodies & Sweatshirts | 10.976 |
 
 **Insight:**
 
@@ -224,22 +225,24 @@ A maioria dos clientes apresentou pelo menos um pedido sem entrega concluída, e
 A taxa de clientes com devoluções é relativamente baixa, mas pode ser analisada em conjunto com categorias e marcas para identificar padrões.
 
 ---
-# Aprendizados
+
+# Principais Aprendizados
 
 Durante este projeto foram exploradas funções avançadas de agregação do BigQuery aplicadas a problemas reais de negócio em um contexto de e-commerce.
 
 Os exercícios permitiram compreender quando utilizar funções aproximadas para ganho de performance, estruturas ARRAY e STRUCT para modelagem analítica e operadores lógicos para avaliação de regras de negócio.
 
 O projeto reforçou conhecimentos em SQL Analítico, Analytics Engineering e Data Warehousing utilizando o Google BigQuery.
+
 ---
 
 # Tecnologias
 
 - Google BigQuery
 - GoogleSQL
-- GitHub
 - Git
-- Dataset Público TheLook E-commerce
+- GitHub
+- TheLook E-commerce Dataset
 
 ---
 
@@ -248,7 +251,7 @@ O projeto reforçou conhecimentos em SQL Analítico, Analytics Engineering e Dat
 - SQL Analítico
 - BigQuery
 - Data Warehousing
-- Query Optimization
+- Query Performance Optimization
 - Funções Avançadas de Agregação
 - Analytics Engineering
 - Business Analytics
@@ -260,8 +263,20 @@ O projeto reforçou conhecimentos em SQL Analítico, Analytics Engineering e Dat
 
 ---
 
+# Próximos Passos
+
+- Explorar Window Functions no BigQuery
+- Aplicar QUALIFY para análises avançadas
+- Construir métricas de negócio reutilizáveis
+- Desenvolver Data Marts analíticos
+- Evoluir para projetos de Analytics Engineering
+  
+---
+
 # Autor
 
-Antonio Neto
+**Antonio Neto**
 
-Projeto desenvolvido como parte da jornada de evolução em Analytics Engineering, BigQuery e Business Analytics.
+Especialista em Operações de Telecomunicações com foco em Analytics, BigQuery, Business Intelligence e Analytics Engineering.
+
+Projeto desenvolvido como parte da jornada de evolução em SQL Analítico, BigQuery e Engenharia Analítica Moderna.
