@@ -12,7 +12,7 @@ Projeto desenvolvido para explorar funções avançadas de agregação do BigQue
 
 # Objetivo
 
-Demonstrar como funções avançadas de agregação podem ser utilizadas para responder perguntas de negócio e gerar insights comerciais e operacionais a partir de grandes volumes de dados.
+Demonstrar a aplicação de funções avançadas de agregação do BigQuery para responder perguntas de negócio, gerar insights analíticos e apoiar a tomada de decisão baseada em dados.
 
 ---
 
@@ -33,7 +33,7 @@ bigquery-public-data.thelook_ecommerce
 
 ---
 
-# Arquitetura do Projeto
+# Arquitetura Analítica
 
 O projeto segue o fluxo abaixo:
 
@@ -83,8 +83,60 @@ Validação de regras de negócio relacionadas à entrega de pedidos.
 
 ## LOGICAL_OR
 
-Identificação de clientes com eventos específicos, como devoluções.
+Avaliação de condições booleanas para identificar clientes que apresentaram pelo menos uma ocorrência de determinado evento, como devoluções.
 
+---
+# Resultados Obtidos
+
+## Clientes Únicos por Categoria
+
+A função APPROX_COUNT_DISTINCT permitiu estimar rapidamente a quantidade de clientes únicos por categoria.
+
+![Clientes Únicos](images/resultado_01_clientes_unicos.png)
+
+Principais categorias:
+
+- Jeans: 11.512 clientes
+- Intimates: 11.317 clientes
+- Fashion Hoodies & Sweatshirts: 10.976 clientes
+
+---
+
+## Distribuição de Preços por Departamento
+
+A função APPROX_QUANTILES foi utilizada para analisar a distribuição dos preços dos produtos.
+
+![Distribuição de Preços](images/resultado_04_distribuicao_precos.png)
+
+### Departamento Masculino
+
+- Mínimo: 1.5
+- Q1: 25.0
+- Mediana: 44.0
+- Q3: 70.0
+- Máximo: 999.0
+
+### Departamento Feminino
+
+- Mínimo: 0.0
+- Q1: 21.1
+- Mediana: 37.0
+- Q3: 68.7
+- Máximo: 903.0
+
+---
+
+## Produtos com Maior Receita
+
+A combinação de ARRAY_AGG e STRUCT permitiu identificar os produtos mais relevantes financeiramente.
+
+![Top Produtos](images/resultado_07_top_produtos_receita.png)
+
+Principais produtos:
+
+1. Nike Women's Pro Compression Sports Bra
+2. The North Face Apex Bionic
+3. The North Face Denali Down
 ---
 
 # Principais Insights
@@ -93,9 +145,9 @@ Identificação de clientes com eventos específicos, como devoluções.
 
 | Categoria | Clientes |
 |------------|----------:|
-| Jeans | 11.698 |
-| Intimates | 11.375 |
-| Tops & Tees | 10.950 |
+| Jeans | 11.512 |
+| Intimates | 11.317 |
+| Tops & Tees | 10.976 |
 
 **Insight:**
 
@@ -172,12 +224,22 @@ A maioria dos clientes apresentou pelo menos um pedido sem entrega concluída, e
 A taxa de clientes com devoluções é relativamente baixa, mas pode ser analisada em conjunto com categorias e marcas para identificar padrões.
 
 ---
+# Aprendizados
+
+Durante este projeto foram exploradas funções avançadas de agregação do BigQuery aplicadas a problemas reais de negócio em um contexto de e-commerce.
+
+Os exercícios permitiram compreender quando utilizar funções aproximadas para ganho de performance, estruturas ARRAY e STRUCT para modelagem analítica e operadores lógicos para avaliação de regras de negócio.
+
+O projeto reforçou conhecimentos em SQL Analítico, Analytics Engineering e Data Warehousing utilizando o Google BigQuery.
+---
 
 # Tecnologias
 
 - Google BigQuery
-- SQL (GoogleSQL)
+- GoogleSQL
 - GitHub
+- Git
+- Dataset Público TheLook E-commerce
 
 ---
 
@@ -185,12 +247,15 @@ A taxa de clientes com devoluções é relativamente baixa, mas pode ser analisa
 
 - SQL Analítico
 - BigQuery
+- Data Warehousing
+- Query Optimization
 - Funções Avançadas de Agregação
 - Analytics Engineering
 - Business Analytics
 - Data Exploration
 - Data Storytelling
-- Git e GitHub
+- Git
+- GitHub
 - Documentação Técnica
 
 ---
